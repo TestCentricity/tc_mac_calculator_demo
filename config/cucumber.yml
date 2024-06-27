@@ -1,0 +1,45 @@
+  <% desktop = "--tags @desktop --require features --publish-quiet" %>
+  <% reports = "--require features --format pretty --format html --out reports/test_results.html --format junit --out reports --format json --out reports/test_results.json" %>
+  <% regression = "--tags '@regression and (not @wip and not @failing)' --require features" %>
+  <% acceptance = "--tags '@bat and (not @wip and not @failing)' --require features" %>
+
+
+#==============
+# generic test context profiles
+#==============
+
+failing: --tags '@failing and not @wip'
+wip:     --tags '@wip and not @failing'
+dev:     --tags '@dev and (not @wip and not @failing)'
+regress: <%= regression %>
+bat:     <%= acceptance %>
+
+
+#==============
+# test reporting profiles
+#==============
+
+report:   <%= reports %> REPORTING=true
+
+
+#==============
+# target_test_environment profiles
+#==============
+
+calculator: TEST_ENVIRONMENT=CALCULATOR_DEMO <%= desktop %>
+debug: DEBUG=true
+
+
+#==============
+# test profiles
+#==============
+
+calc_bat: -p calculator -p bat PLATFORM=mac -p run_appium -p report W3C_CAPS=mac
+calc_regress: -p calculator -p regress PLATFORM=mac -p run_appium W3C_CAPS=mac
+
+
+#==============
+# profile to start Appium Server prior to running tests on locally hosted MacOS platform
+#==============
+
+run_appium: APPIUM_SERVER=run

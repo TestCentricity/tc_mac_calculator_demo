@@ -1,0 +1,4 @@
+# This section is populated with Environment data required to execute automated test suites on all supported environments
+Environments:
+  CALCULATOR_DEMO:
+    MAC_BUNDLE_ID: 'com.apple.calculator'

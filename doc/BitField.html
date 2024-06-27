@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: BitField
+  
+    &mdash; Documentation by YARD 0.9.36
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "BitField";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (B)</a> &raquo;
+    
+    
+    <span class="title">BitField</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: BitField
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">TestCentricity::ScreenSection</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">TestCentricity::ScreenSection</li>
+          
+            <li class="next">BitField</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>features/support/sections/bit_field.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_bits-instance_method" title="#set_bits (instance method)">#<strong>set_bits</strong>(bit_data)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verify_bit_field-instance_method" title="#verify_bit_field (instance method)">#<strong>verify_bit_field</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verify_bits-instance_method" title="#verify_bits (instance method)">#<strong>verify_bits</strong>(bit_data)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="set_bits-instance_method">
+  
+    #<strong>set_bits</strong>(bit_data)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'features/support/sections/bit_field.rb', line 427</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_bits'>set_bits</span><span class='lparen'>(</span><span class='id identifier rubyid_bit_data'>bit_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bit_data'>bit_data</span> <span class='op'>=</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>64</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span>
+  <span class='id identifier rubyid_bits'>bits</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='id identifier rubyid_bit_0_check'>bit_0_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_1_check'>bit_1_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_2_check'>bit_2_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_3_check'>bit_3_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_4_check'>bit_4_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_5_check'>bit_5_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_6_check'>bit_6_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_7_check'>bit_7_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_8_check'>bit_8_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>8</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_9_check'>bit_9_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_10_check'>bit_10_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>10</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_11_check'>bit_11_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>11</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_12_check'>bit_12_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>12</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_13_check'>bit_13_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>13</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_14_check'>bit_14_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>14</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_15_check'>bit_15_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>15</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_16_check'>bit_16_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>16</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_17_check'>bit_17_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>17</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_18_check'>bit_18_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>18</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_19_check'>bit_19_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>19</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_20_check'>bit_20_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>20</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_21_check'>bit_21_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>21</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_22_check'>bit_22_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>22</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_23_check'>bit_23_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>23</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_24_check'>bit_24_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>24</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_25_check'>bit_25_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>25</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_26_check'>bit_26_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>26</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_27_check'>bit_27_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>27</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_28_check'>bit_28_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>28</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_29_check'>bit_29_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>29</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_30_check'>bit_30_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>30</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_31_check'>bit_31_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>31</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_32_check'>bit_32_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>32</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_33_check'>bit_33_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>33</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_34_check'>bit_34_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>34</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_35_check'>bit_35_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>35</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_36_check'>bit_36_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>36</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_37_check'>bit_37_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>37</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_38_check'>bit_38_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>38</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_39_check'>bit_39_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>39</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_40_check'>bit_40_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>40</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_41_check'>bit_41_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>41</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_42_check'>bit_42_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>42</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_43_check'>bit_43_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>43</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_44_check'>bit_44_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>44</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_45_check'>bit_45_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>45</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_46_check'>bit_46_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>46</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_47_check'>bit_47_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>47</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_48_check'>bit_48_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>48</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_49_check'>bit_49_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>49</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_50_check'>bit_50_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>50</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_51_check'>bit_51_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>51</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_52_check'>bit_52_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>52</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_53_check'>bit_53_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>53</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_54_check'>bit_54_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>54</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_55_check'>bit_55_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>55</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_56_check'>bit_56_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>56</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_57_check'>bit_57_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>57</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_58_check'>bit_58_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>58</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_59_check'>bit_59_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>59</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_60_check'>bit_60_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>60</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_61_check'>bit_61_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>61</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_62_check'>bit_62_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>62</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_63_check'>bit_63_check</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>63</span><span class='rbracket'>]</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_populate_data_fields'>populate_data_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_bits'>bits</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="verify_bit_field-instance_method">
+  
+    #<strong>verify_bit_field</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'features/support/sections/bit_field.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_verify_bit_field'>verify_bit_field</span>
+  <span class='id identifier rubyid_ui'>ui</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='id identifier rubyid_bit_0_marker'>bit_0_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_15_marker'>bit_15_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>15</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_31_marker'>bit_31_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>31</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_32_marker'>bit_32_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>32</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_47_marker'>bit_47_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>47</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_63_marker'>bit_63_marker</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>63</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_0_check'>bit_0_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_1_check'>bit_1_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_2_check'>bit_2_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_3_check'>bit_3_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_4_check'>bit_4_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_5_check'>bit_5_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_6_check'>bit_6_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_7_check'>bit_7_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_8_check'>bit_8_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_9_check'>bit_9_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_10_check'>bit_10_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_11_check'>bit_11_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_12_check'>bit_12_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_13_check'>bit_13_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_14_check'>bit_14_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_15_check'>bit_15_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_16_check'>bit_16_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_17_check'>bit_17_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_18_check'>bit_18_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_19_check'>bit_19_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_20_check'>bit_20_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_21_check'>bit_21_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_22_check'>bit_22_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_23_check'>bit_23_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_24_check'>bit_24_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_25_check'>bit_25_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_26_check'>bit_26_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_27_check'>bit_27_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_28_check'>bit_28_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_29_check'>bit_29_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_30_check'>bit_30_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_31_check'>bit_31_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_32_check'>bit_32_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_33_check'>bit_33_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_34_check'>bit_34_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_35_check'>bit_35_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_36_check'>bit_36_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_37_check'>bit_37_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_38_check'>bit_38_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_39_check'>bit_39_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_40_check'>bit_40_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_41_check'>bit_41_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_42_check'>bit_42_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_43_check'>bit_43_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_44_check'>bit_44_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_45_check'>bit_45_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_46_check'>bit_46_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_47_check'>bit_47_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_48_check'>bit_48_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_49_check'>bit_49_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_50_check'>bit_50_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_51_check'>bit_51_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_52_check'>bit_52_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_53_check'>bit_53_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_54_check'>bit_54_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_55_check'>bit_55_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_56_check'>bit_56_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_57_check'>bit_57_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_58_check'>bit_58_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_59_check'>bit_59_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_60_check'>bit_60_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_61_check'>bit_61_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_62_check'>bit_62_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_63_check'>bit_63_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='label'>caption:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='label'>checked:</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='label'>visible:</span> <span class='kw'>true</span>
+    <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_verify_ui_states'>verify_ui_states</span><span class='lparen'>(</span><span class='id identifier rubyid_ui'>ui</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="verify_bits-instance_method">
+  
+    #<strong>verify_bits</strong>(bit_data)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'features/support/sections/bit_field.rb', line 498</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_verify_bits'>verify_bits</span><span class='lparen'>(</span><span class='id identifier rubyid_bit_data'>bit_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bit_data = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bit_data'>bit_data</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_bit_data'>bit_data</span> <span class='op'>=</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>64</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span>
+  <span class='id identifier rubyid_ui'>ui</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='id identifier rubyid_bit_0_check'>bit_0_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_1_check'>bit_1_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_2_check'>bit_2_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_3_check'>bit_3_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_4_check'>bit_4_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_5_check'>bit_5_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_6_check'>bit_6_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_7_check'>bit_7_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_8_check'>bit_8_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>8</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>8</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_9_check'>bit_9_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>9</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_10_check'>bit_10_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>10</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>10</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_11_check'>bit_11_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>11</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>11</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_12_check'>bit_12_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>12</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>12</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_13_check'>bit_13_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>13</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>13</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_14_check'>bit_14_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>14</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>14</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_15_check'>bit_15_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>15</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>15</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_16_check'>bit_16_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>16</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>16</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_17_check'>bit_17_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>17</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>17</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_18_check'>bit_18_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>18</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>18</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_19_check'>bit_19_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>19</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>19</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_20_check'>bit_20_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>20</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>20</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_21_check'>bit_21_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>21</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_22_check'>bit_22_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>22</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>22</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_23_check'>bit_23_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>23</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>23</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_24_check'>bit_24_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>24</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>24</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_25_check'>bit_25_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>25</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>25</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_26_check'>bit_26_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>26</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>26</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_27_check'>bit_27_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>27</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>27</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_28_check'>bit_28_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>28</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>28</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_29_check'>bit_29_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>29</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>29</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_30_check'>bit_30_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>30</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>30</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_31_check'>bit_31_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>31</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>31</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_32_check'>bit_32_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>32</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>32</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_33_check'>bit_33_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>33</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>33</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_34_check'>bit_34_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>34</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>34</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_35_check'>bit_35_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>35</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>35</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_36_check'>bit_36_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>36</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>36</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_37_check'>bit_37_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>37</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>37</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_38_check'>bit_38_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>38</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>38</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_39_check'>bit_39_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>39</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>39</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_40_check'>bit_40_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>40</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>40</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_41_check'>bit_41_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>41</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>41</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_42_check'>bit_42_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>42</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>42</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_43_check'>bit_43_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>43</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>43</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_44_check'>bit_44_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>44</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>44</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_45_check'>bit_45_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>45</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>45</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_46_check'>bit_46_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>46</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>46</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_47_check'>bit_47_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>47</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>47</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_48_check'>bit_48_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>48</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>48</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_49_check'>bit_49_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>49</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>49</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_50_check'>bit_50_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>50</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>50</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_51_check'>bit_51_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>51</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>51</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_52_check'>bit_52_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>52</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>52</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_53_check'>bit_53_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>53</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>53</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_54_check'>bit_54_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>54</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>54</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_55_check'>bit_55_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>55</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>55</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_56_check'>bit_56_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>56</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>56</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_57_check'>bit_57_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>57</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>57</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_58_check'>bit_58_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>58</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>58</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_59_check'>bit_59_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>59</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>59</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_60_check'>bit_60_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>60</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>60</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_61_check'>bit_61_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>61</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>61</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_62_check'>bit_62_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>62</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>62</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_bit_63_check'>bit_63_check</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>caption:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>63</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>checked:</span> <span class='id identifier rubyid_bit_data'>bit_data</span><span class='lbracket'>[</span><span class='int'>63</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span> <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_verify_ui_states'>verify_ui_states</span><span class='lparen'>(</span><span class='id identifier rubyid_ui'>ui</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Jun 26 20:11:45 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.1.0).
+</div>
+
+    </div>
+  </body>
+</html>
